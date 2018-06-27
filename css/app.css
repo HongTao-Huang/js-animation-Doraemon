@@ -12,7 +12,7 @@ body{
 .code , .canvas{
     width: 50%;
     height: 90vh;
-    margin: 20px;
+    margin: 50px;
 }
 
 .code{
@@ -20,7 +20,7 @@ body{
     overflow-y:hidden;
 }
 
-.button{
+.button , .speed{
     color: #07bbea;
     border: none;
     height: 20px;
@@ -28,13 +28,18 @@ body{
     width: 60px;
     position: fixed;
     right: 50px;
-    top: 60px;
+    top: 90px;
     border: 1px solid #ddd;
-    box-shadow: 3 2 1 0 rgba(0 , 0 , 0 , 0.2);
+    box-shadow: -2px 3px 10px 0px rgba(0,0,0,0.4);
 }
 
 .up{
-    top: 30px;
+    top: 60px;
+}
+
+.speed{
+    top: 150px;
+    text-align: center;
 }
 
 .token.selector,.token.punctuation,.token.property,.token.comment,.token.function{

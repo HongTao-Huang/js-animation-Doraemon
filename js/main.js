@@ -1,20 +1,3 @@
-function ele(selector) {
-    return document.querySelector(selector);
-}
-
-function writeCode(result) {
-    var n = 0;
-    var id = setInterval(()=>{
-        n += 1;
-       ele('.code').innerHTML = Prism.highlight(result.substring(0 , n), Prism.languages.css, 'css');
-       ele('#styleTag').innerHTML = result.substring(0 , n);
-       ele('.code').scrollTop = ele('.code').scrollHeight;
-       if(n >= result){
-           window.clearInterval(id);
-       }
-    },10)
-}
-
 var result = `
 /* 现在开始画个哆啦A梦吧*/
 /* 添加一个画板 */
@@ -425,4 +408,39 @@ var result = `
 /*# sourceMappingURL=main.css.map */
 `;
 
-writeCode(result);
+let timeout = 170;
+let n = 0;
+
+function ele(selector) {
+    return document.querySelector(selector);
+}
+
+function writeCode(result , timeout) {
+    return setInterval(()=>{
+        n += 1;
+       ele('.code').innerHTML = Prism.highlight(result.substring(0 , n), Prism.languages.css, 'css');
+       ele('#styleTag').innerHTML = result.substring(0 , n);
+       ele('.code').scrollTop = ele('.code').scrollHeight;
+       if(n >= result){
+           window.clearInterval(id);
+       }
+    },timeout)
+}
+
+function resetSpeed(timeout){
+    ele('.speed').innerHTML = `速度：${5 - Math.floor(timeout / 40)}`;
+    window.clearInterval(timerId);
+    timerId = writeCode(result , timeout);
+}
+
+ele('.up').addEventListener('click', ()=>{
+    if(timeout > 10) timeout -= 40;
+    resetSpeed(timeout);
+})
+
+ele('.down').addEventListener('click' , ()=>{
+    if(timeout < 170) timeout += 40;
+    resetSpeed(timeout);
+})
+
+var timerId = writeCode(result , timeout);
