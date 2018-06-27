@@ -1,0 +1,27 @@
+/* 首先去掉一些默认的样式 */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    justify-content: left;
+}
+
+.code , .canvas{
+    width: 50%;
+    height: 90vh;
+    margin: 20px;
+}
+
+.code{
+    border: 1px solid #07bbea;
+    /*overflow:-Scroll;*/
+    overflow-y:hidden;
+}
+
+.token.selector,.token.punctuation,.token.property,.token.comment,.token.function{
+    color: rgb(132,26,138);
+}
+
