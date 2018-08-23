@@ -408,7 +408,7 @@ var result = `
 /*# sourceMappingURL=main.css.map */
 `;
 
-let timeout = 170;
+let timeout = 200;
 let n = 0;
 
 function ele(selector) {
@@ -428,18 +428,18 @@ function writeCode(result , timeout) {
 }
 
 function resetSpeed(timeout){
-    ele('.speed').innerHTML = `速度：${5 - Math.floor(timeout / 40)}`;
+    ele('.speed').innerHTML = `速度：${6 - Math.floor(timeout / 40)}`;
     window.clearInterval(timerId);
     timerId = writeCode(result , timeout);
 }
 
 ele('.up').addEventListener('click', ()=>{
-    if(timeout > 10) timeout -= 40;
+    if(timeout > 0) timeout -= 40;
     resetSpeed(timeout);
 })
 
 ele('.down').addEventListener('click' , ()=>{
-    if(timeout < 170) timeout += 40;
+    if(timeout < 200) timeout += 40;
     resetSpeed(timeout);
 })
 
