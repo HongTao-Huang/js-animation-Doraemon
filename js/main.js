@@ -1,17 +1,13 @@
 var result = `
 /* 现在开始画个哆啦A梦吧*/
 /* 添加一个画板 */
-.canvas {
-    position: relative;
-}
+.canvas { position: relative; }
 
 /* 在画板中添加机器猫 */
-.canvas .doraemon {
-    position: relative;
-}
+.doraemon { position: relative; }
 
 /* 现在开始画头部啦  */
-.canvas .doraemon .head {
+.doraemon .head {
     width: 320px;
     height: 300px;
     position: relative;
@@ -29,13 +25,10 @@ var result = `
 .token.function{color:#DD4A68}
 
 /* 开始画眼睛咯  */
-.canvas .doraemon .head .eyes {
-    position: relative;
-    z-index: 5;
-}
+.eyes { position: relative; z-index: 5; }
 
 /*  这里是添加眼白  */
-.canvas .doraemon .head .eyes .eye {
+.eyes .eye {
     width: 72px;
     height: 82px;
     background-color: #fff;
@@ -47,7 +40,7 @@ var result = `
 
 /*  这里是添加眼珠并且使眼珠会动哦  */
 
-.canvas .doraemon .head .eyes .eye::after {
+.eyes .eye::after {
     content: '';
     width: 14px;
     height: 14px;
@@ -59,50 +52,24 @@ var result = `
     animation: eyesmove 5s linear infinite;
 }
 
-.canvas .doraemon .head .eyes .left {
-    left: 82px;
-}
-
-.canvas .doraemon .head .eyes .right {
-    left: 156px;
-}
-
-.canvas .doraemon .head .eyes .left::after {
-    left: 50px;
-}
-
-.canvas .doraemon .head .eyes .right::after {
-    left: 7px;
-}
+.eyes .left { left: 82px; }
+.eyes .right { left: 156px; }
+.eyes .left::after { left: 50px; }
+.eyes .right::after { left: 7px; }
 
 @keyframes eyesmove {
-    60% {
-        margin: 0;
-    }
-    70% {
-        margin: -22px 0 0 0;
-    }
-    75% {
-        margin: -22px 0 0 -5px;
-    }
-    80% {
-        margin: -22px 0 0 5px;
-    }
-    87% {
-        margin: -22px 0 0 0;
-    }
-    90% {
-        margin: 0;
-    }
+    60% { margin: 0; }
+    70% { margin: -22px 0 0 0; }
+    75% { margin: -22px 0 0 -5px; }
+    80% { margin: -22px 0 0 5px; }
+    87% { margin: -22px 0 0 0; }
+    90% { margin: 0; }
 }
 
 /* 添加白脸底  */
+.head .faces { position: relative; }
 
-.canvas .doraemon .head .faces {
-    position: relative;
-}
-
-.canvas .doraemon .head .faces .face {
+.faces .face {
     height: 195px;
     width: 265px;
     background-color: #fff;
@@ -113,7 +80,7 @@ var result = `
 }
 
 /* 鼻子哦 鼻子哦 */
-.canvas .doraemon .head .faces .nose {
+.faces .nose {
     width: 30px;
     height: 30px;
     border-radius: 15px;
@@ -126,7 +93,7 @@ var result = `
 }
 
 /*  鼻子中间的线  */
-.canvas .doraemon .head .faces .nose-line {
+.faces .nose-line {
     width: 3px;
     height: 100px;
     background-color: #000;
@@ -137,7 +104,7 @@ var result = `
 }
 
 /* 微笑的嘴巴  */
-.canvas .doraemon .head .faces .mouth {
+.faces .mouth {
     width: 220px;
     height: 400px;
     border: none;
@@ -149,7 +116,7 @@ var result = `
 }
 
 /* 胡须 */
-.canvas .doraemon .head .faces .whiskers {
+.faces .whiskers {
     width: 220px;
     height: 80px;
     background-color: #fff;
@@ -159,7 +126,7 @@ var result = `
     z-index: 2;
 }
 
-.canvas .doraemon .head .faces .whiskers .whisker {
+.whiskers .whisker {
     width: 60px;
     height: 2px;
     background-color: #000;
@@ -167,32 +134,15 @@ var result = `
     left: 0;
 }
 
-.canvas .doraemon .head .faces .whiskers .right {
-    left: 165px;
-}
-
-.canvas .doraemon .head .faces .whiskers .top {
-    top: 25px;
-}
-
-.canvas .doraemon .head .faces .whiskers .middle {
-    top: 45px;
-}
-
-.canvas .doraemon .head .faces .whiskers .bottom {
-    top: 65px;
-}
-
-.canvas .doraemon .head .faces .whiskers .rotate160 {
-    transform: rotate(160deg);
-}
-
-.canvas .doraemon .head .faces .whiskers .rotate20 {
-    transform: rotate(20deg);
-}
+.whiskers .right { left: 165px; }
+.whiskers .top { top: 25px; }
+.whiskers .middle { top: 45px; }
+.whiskers .bottom { top: 65px; }
+.whiskers .rotate160 { transform: rotate(160deg); }
+.whiskers .rotate20 { transform: rotate(20deg); }
 
 /*  铃铛  */
-.canvas .doraemon .neck {
+.neck {
     width: 230px;
     height: 20px;
     background-color: #c40;
@@ -204,7 +154,7 @@ var result = `
     z-index: 4;
 }
 
-.canvas .doraemon .neck .bell {
+.neck .bell {
     height: 40px;
     width: 40px;
     border: 2px solid #000;
@@ -215,7 +165,7 @@ var result = `
     left: 90px;
 }
 
-.canvas .doraemon .neck .bell .bellTongue {
+.bell .bellTongue {
     width: 12px;
     height: 10px;
     background-color: #000;
@@ -225,7 +175,7 @@ var result = `
     left: 14px;
 }
 
-.canvas .doraemon .neck .bell::after {
+.neck .bell::after {
     content: '';
     display: block;
     width: 36px;
@@ -236,7 +186,7 @@ var result = `
     top: 10px;
 }
 
-.canvas .doraemon .neck .bell::before {
+.neck .bell::before {
     content: '';
     display: block;
     width: 3px;
@@ -248,7 +198,7 @@ var result = `
 }
 
 /* 开始画身体了 */
-.canvas .doraemon .body {
+.body {
     width: 220px;
     height: 165px;
     background-color: #07beea;
@@ -259,7 +209,7 @@ var result = `
 }
 
 /* 口袋 */
-.canvas .doraemon .body .pocket {
+.body .pocket {
     width: 170px;
     height: 170px;
     background-color: #fff;
@@ -270,7 +220,7 @@ var result = `
     left: 22px;
 }
 
-.canvas .doraemon .body .pocket::after {
+.body .pocket::after {
     content: '';
     display: block;
     width: 130px;
@@ -283,7 +233,7 @@ var result = `
     left: 19px;
 }
 
-.canvas .doraemon .body .pocket::before {
+.body .pocket::before {
     content: '';
     display: block;
     width: 134px;
@@ -297,22 +247,17 @@ var result = `
 }
 
 /* 手 */
-.canvas .doraemon .body .hand {
+.body .hand {
     width: 100px;
     height: 100px;
     position: absolute;
     top: 0px;
 }
 
-.canvas .doraemon .body .hand.left {
-    left: -72px;
-}
+.body .hand.left { left: -72px; }
+.body .hand.right { right: -72px; }
 
-.canvas .doraemon .body .hand.right {
-    right: -72px;
-}
-
-.canvas .doraemon .body .hand .arm {
+.body .hand .arm {
     width: 80px;
     height: 50px;
     background-color: #07bbea;
@@ -322,16 +267,9 @@ var result = `
     top: 0px;
 }
 
-.canvas .doraemon .body .hand.left .arm {
-    left: 20px;
-    transform: rotate(145deg);
-}
-
-.canvas .doraemon .body .hand.right .arm {
-    transform: rotate(35deg);
-}
-
-.canvas .doraemon .body .hand .arm::after {
+.body .hand.left .arm { left: 20px; transform: rotate(145deg); }
+.body .hand.right .arm { transform: rotate(35deg); }
+.body .hand .arm::after {
     content: '';
     display: block;
     width: 60px;
@@ -342,7 +280,7 @@ var result = `
     position: absolute;
 }
 
-.canvas .doraemon .body .hand .write {
+.body .hand .write {
     width: 5px;
     height: 45px;
     background-color: #07bbea;
@@ -350,32 +288,18 @@ var result = `
     position: absolute;
 }
 
-.canvas .doraemon .body .hand.left .arm::after {
-    left: 50px;
-    bottom: -7px;
-}
+.body .hand.left .arm::after { left: 50px; bottom: -7px; }
 
-.canvas .doraemon .body .hand.right .arm::after {
-    right: -33px;
-    bottom: -7px;
-}
+.body .hand.right .arm::after { right: -33px; bottom: -7px; }
 
-.canvas .doraemon .body .hand.left .write {
-    top: -5px;
-    left: 67px;
-}
+.body .hand.left .write { top: -5px; left: 67px; }
 
-.canvas .doraemon .body .hand.right .write {
-    top: -5px;
-    right: 67px;
-}
+.canvas .doraemon .body .hand.right .write { top: -5px; right: 67px; }
 
 /* 脚 */
-.canvas .doraemon .footer {
-    position: absolute;
-}
+.footer { position: absolute; }
 
-.canvas .doraemon .footer .foot {
+.footer .foot {
     width: 125px;
     height: 30px;
     background-color: #fff;
@@ -385,15 +309,9 @@ var result = `
     top: 163px;
 }
 
-.canvas .doraemon .footer .left {
-    left: -25px;
-}
-
-.canvas .doraemon .footer .right {
-    left: 115px;
-}
-
-.canvas .doraemon .footer .write {
+.footer .left { left: -25px; }
+.footer .right { left: 115px; }
+.footer .write {
     width: 28px;
     height: 10px;
     background-color: #fff;
@@ -405,42 +323,42 @@ var result = `
     left: 95px;
 }
 
-/*# sourceMappingURL=main.css.map */
+/* 这样的哆啦A梦你们喜欢么 */
 `;
 
 let timeout = 200;
 let n = 0;
 
 function ele(selector) {
-    return document.querySelector(selector);
+  return document.querySelector(selector);
 }
 
-function writeCode(result , timeout) {
-    return setInterval(()=>{
-        n += 1;
-       ele('.code').innerHTML = Prism.highlight(result.substring(0 , n), Prism.languages.css, 'css');
-       ele('#styleTag').innerHTML = result.substring(0 , n);
-       ele('.code').scrollTop = ele('.code').scrollHeight;
-       if(n >= result){
-           window.clearInterval(id);
-       }
-    },timeout)
+function writeCode(result, timeout) {
+  return setInterval(() => {
+    n += 1;
+    ele('.code').innerHTML = Prism.highlight(result.substring(0, n), Prism.languages.css, 'css');
+    ele('#styleTag').innerHTML = result.substring(0, n);
+    ele('.code').scrollTop = ele('.code').scrollHeight;
+    if (n >= result) {
+      window.clearInterval(id);
+    }
+  }, timeout)
 }
 
-function resetSpeed(timeout){
-    ele('.speed').innerHTML = `速度：${6 - Math.floor(timeout / 40)}`;
-    window.clearInterval(timerId);
-    timerId = writeCode(result , timeout);
+function resetSpeed(timeout) {
+  ele('.speed').innerHTML = `速度：${6 - Math.floor(timeout / 40)}`;
+  window.clearInterval(timerId);
+  timerId = writeCode(result, timeout);
 }
 
-ele('.up').addEventListener('click', ()=>{
-    if(timeout > 0) timeout -= 40;
-    resetSpeed(timeout);
+ele('.up').addEventListener('click', () => {
+  if (timeout > 0) timeout -= 40;
+  resetSpeed(timeout);
 })
 
-ele('.down').addEventListener('click' , ()=>{
-    if(timeout < 200) timeout += 40;
-    resetSpeed(timeout);
+ele('.down').addEventListener('click', () => {
+  if (timeout < 200) timeout += 40;
+  resetSpeed(timeout);
 })
 
-var timerId = writeCode(result , timeout);
+var timerId = writeCode(result, timeout);
